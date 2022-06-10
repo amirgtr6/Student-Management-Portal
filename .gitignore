@@ -1,0 +1,19 @@
+# Python
+*.pyc
+*~
+__pycache__
+
+# Env
+.env
+v/
+venv/
+
+
+
+
+# Windows
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+

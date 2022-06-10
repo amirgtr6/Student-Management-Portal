@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> سامانه دانشجویی | اطلاعات دانشجویی</title>
+<link rel="icon" type="image/x-icon" href="{% static 'newapp\images\demo\icons.png' %}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'newapp/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace linklist">
+        <li>دانشگاه تبریز - سامانه دانشجویان دانشکده کامپیوتر</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace linklist">
+        <li><i class="fa fa-phone"></i>۰۴۱-۳۳۳۴۰۰۸۱-۹</li>
+        <li><i class="fa fa-envelope-o"></i> tabriz.university@domain.com</li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="/">سامانه دانشجویی</a></h1>
+    </div>
+    <!-- ################################################################################################ -->
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li><a href="/">خانه</a></li>
+        <li><a class="drop" href="#">امور آموزش</a>
+          <ul>
+            <li><a href="sidebar-right.html">کارنامه تحصیلی</a></li>
+            <li><a href="basic-grid.html">دروس رشته</a>            
+          </ul>
+        </li>
+           <li class="active"><a  href="sidebar-left.html">اطلاعات دانشجویی</a>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" >
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul>
+        <li><a href="/">خانه</a></li>
+        <li><a href="sidebar-left.html">اطلاعات دانشجویی</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<style>
+body {
+  background-image: url('{% static 'newapp/images/demo/backgrounds/334.jpg' %}');
+}
+</style>
+<!-- ################################################################################################ -->
+<main class="container clear"> 
+<!-- main body -->
+<!-- ################################################################################################ -->
+<div class="content"> 
+<h2 dir="rtl"
+       style="color:white;">
+اطلاعات دانشجویی</h2>
+<div dir="rtl"
+        class="scrollable">
+<table style="width:100% "
+         dir="rtl">
+<tr style="font-size:100%;"
+               align="middle">
+               {% for x in mydaneshjo %}
+               <tr style="font-size:100%;"
+                           align="right">
+                <th>شماره دانشجویی</th>
+                <td>{{ x.shomare_daneshjoi | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                             align="right">
+                <th >کدملی</th>
+                <td>{{ x.code_meli | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>نام</th>
+                <td>{{ x.name | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>دانشکده</th>
+                <td>{{ x.daneshkade | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>رشته</th>
+                <td>{{ x.reshte | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>مقطع</th>
+                <td>{{ x.maqta | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>نوبت پذیرش</th>
+                <td>{{ x.nobat_paziresh | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+
+                <th>ترم ورود</th>
+                <td>{{ x.term_vorood | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>نام پدر</th>
+                <td>{{ x.nam_pedar | default_if_none:"" }}</td>
+                </tr>
+                <tr style="font-size:100%;"
+                              align="right">
+                <th>تاریخ تولد</th>       
+                <td>{{ x.tarikh_tavalod | default_if_none:"" }}</td>
+                </tr>
+                {% endfor %}
+</tr>
+</table>
+</div>
+<!-- / main body -->
+<div class="clear"></div>
+</main>
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_half first"
+            align="right">
+      <h6 class="title">  اطلاعات دانشگاه</h6>
+      <ul class="nospace linklist">
+        <li class="btmspace-10">
+          <address>
+          <span class="fa fa-map-marker"></span>نشانی: ایران،آذربایجان شرقی،تبریز، بلوار ۲۹بهمن،دانشگاه تبریز
+          </address>
+        </li>
+        <li class="btmspace-10"><span class="fa fa-phone"></span>تلفن:۹-۳۳۳۴۰۰۸۱-۰۴۱ </li>
+        <li class="btmspace-10"><span class="fa fa-phone"></span> ۰۴۱۵۱۶۶۶۱۶۴۷۱ :کدپستی</li>
+        <li><span class="fa fa-envelope-o"></span> دورنگار: ۳۳۳۴۴۰۱۳-۰۴۱</li>
+      </ul>
+    </div>
+    <div class="one_quarter"
+            align="right">
+      <h6 class="title">دسترسی سریع</h6>
+      <ul class="nospace linklist">
+        <li><a href="/newapp">خانه</a></li>
+        <li><a href="sidebar-right.html">کارنامه تحصیلی</a></li>
+        <li><a href="basic-grid.html">دروس رشته</a></li>
+        <li><a href="sidebar-left.html">اطلاعات دانشجویی</a></li>
+      </ul>
+    </div>  
+    <div class="one_quarter"
+            align="right">
+      <h6 class="title">پیوندهای مفید</h6>
+      <form class="btmspace-50" method="post" action="#">
+<ul class="nospace linklist">
+        <li><a href="http://www.msrt.ir/fa">وزارت علوم، تحقیقات و فناوری</a></li>
+        <li><a href="http://www.president.ir/">پایگاه اطلاع رسانی ریاست جمهوری</a></li>
+        <li><a href="http://tabrizu.ac.ir/fa/page/10186/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7-%D9%88-%D9%85%D8%B1%D8%A7%DA%A9%D8%B2-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B9%D8%A7%D9%84%DB%8C">دانشگاه ها و مراکز آموزش عالی</a></li>
+        <li><a href="http://www.leader.ir/">پایگاه اطلاع رسانی دفتر مقام معظم رهبری</a></li>
+      </ul>
+
+    </div>
+
+
+
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row6">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">کلیه حقوق متعلق به امیر.م می باشد.</p>
+    <p class="fl_right">طراح وبسایت: امیر.م </p>
+   
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'newapp/layout/scripts/jquery.min.js' %}"></script> 
+<script src="{% static 'newapp/layout/scripts/jquery.mobilemenu.js'%}"></script>
+</body>
+</html>
