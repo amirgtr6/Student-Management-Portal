@@ -2,10 +2,10 @@
 
 a simple web-based open source software written in Python.
 
-##Demo
+## Demo
 URL: http://amirmov66.pythonanywhere.com/ 
 
-##Technology
+## Technology
 *Python
 *JavaScript
 *HTML
